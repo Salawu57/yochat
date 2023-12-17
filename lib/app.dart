@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yo_chat/authentication/screens/login/login.dart';
+import 'package:yo_chat/bindings/general_bindings.dart';
 // import 'package:yo_chat/authentication/screens/onboarding/onboarding.dart';
 import 'package:yo_chat/utils/theme/theme.dart';
 
@@ -13,7 +14,19 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: YoAppTheme.lightTheme,
       darkTheme: YoAppTheme.darkTheme,
+      initialBinding: GeneralBindings(),
       home:const LoginScreen(),
     );
   }
 }
+
+
+
+// const Scaffold(
+//         backgroundColor: YoColors.primary,
+//         body: Center(
+//           child: CircularProgressIndicator(
+//             color: Colors.white,
+//           ),
+//         ),
+//       ),

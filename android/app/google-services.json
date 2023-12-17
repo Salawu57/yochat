@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "42894160323",
+    "project_id": "yo-chat-bcd45",
+    "storage_bucket": "yo-chat-bcd45.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:42894160323:android:e73dac3dd94d538d970d76",
+        "android_client_info": {
+          "package_name": "com.example.yo_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "42894160323-f0muolja5i5hot9egk6h6nqhgvls1kou.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.yo_chat",
+            "certificate_hash": "f874e032953f124737789072403a520683dc3e32"
+          }
+        },
+        {
+          "client_id": "42894160323-q5huh6sb9jeeru14h5a49dgrqmk1niul.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6iaS606N2lU3seLUqjmDV6COob6Fmmf0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "42894160323-q5huh6sb9jeeru14h5a49dgrqmk1niul.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "42894160323-9pt4cbujcmumv61jqcil6k42t5kk05nj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.yoChat"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
