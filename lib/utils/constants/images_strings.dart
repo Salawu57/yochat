@@ -150,6 +150,10 @@ class YoAppImages {
 
   //Profile
   static const String user = "assets/images/content/user.png";
+  static const String docerAnimation = "assets/images/animations/141594-animation-of-docer.json";
+   static const String successfulRegistration = "assets/images/animations/successful_animation.json";
+  
+  static const String loader57 = "assets/images/animations/loader57.json";
 
   // -- Payment Methods
   static const String applePay = "assets/icons/payment_methods/apple-pay.png";

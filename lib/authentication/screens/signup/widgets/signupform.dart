@@ -27,7 +27,7 @@ class SingupForm extends StatelessWidget {
           decoration: const InputDecoration(
               isDense: true,
               contentPadding: EdgeInsets.symmetric(vertical: 5),
-              labelText: YoTexts.firstName,
+              labelText: YoTexts.fullName,
               prefixIcon: Icon(Iconsax.user)),
         ),
         const SizedBox(height: YoAppSize.spaceBtwInputFields),

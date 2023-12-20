@@ -7,6 +7,7 @@ import 'package:yo_chat/common/widgets/appbar/appbar.dart';
 import 'package:yo_chat/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:yo_chat/common/widgets/list_tile/settings_menu_tile.dart';
 import 'package:yo_chat/common/widgets/list_tile/user_profile_tile.dart';
+import 'package:yo_chat/data/repositories/authentication/authentication_repository.dart';
 import 'package:yo_chat/utils/constants/colors.dart';
 
 import 'package:yo_chat/utils/constants/sizes.dart';
@@ -29,7 +30,8 @@ class SettingsScreen extends StatelessWidget {
                               .textTheme
                               .headlineMedium!
                               .apply(color: YoColors.white))),
-                   UserProfileTiles(onPressed: () => Get.to(() => const ProfileScreen())),
+                  UserProfileTiles(
+                      onPressed: () => Get.to(() => const ProfileScreen())),
                   const SizedBox(
                     height: YoAppSize.spaceBtwSections,
                   )
@@ -74,10 +76,11 @@ class SettingsScreen extends StatelessWidget {
                     height: YoAppSize.spaceBtwSections,
                   ),
                   SizedBox(
-                    width: double.infinity,
-                    child: OutlinedButton(onPressed: () {}, child: const Text('Logout'))),
-                    // const SizedBox(
-                    //   height: YoAppSize.spaceBtwSections * 2.5)
+                      width: double.infinity,
+                      child: OutlinedButton(
+                          onPressed: ()  => AuthenticationRepository.instance.logout(), child: const Text('Logout'))),
+                  // const SizedBox(
+                  //   height: YoAppSize.spaceBtwSections * 2.5)
                 ],
               ),
             ),
