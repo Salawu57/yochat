@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:yo_chat/authentication/screens/chat/chat_contact.dart';
+
 import 'package:yo_chat/authentication/screens/notification/notifications.dart';
 import 'package:yo_chat/authentication/screens/settings/settings.dart';
 import 'package:yo_chat/authentication/screens/status/status.dart';

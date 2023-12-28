@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yo_chat/bindings/general_bindings.dart';
-import 'package:yo_chat/pages/chat/index.dart';
+
 import 'package:yo_chat/utils/constants/colors.dart';
 // import 'package:yo_chat/authentication/screens/onboarding/onboarding.dart';
 import 'package:yo_chat/utils/theme/theme.dart';

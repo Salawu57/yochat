@@ -16,6 +16,7 @@ class ContactList extends StatelessWidget {
       child: InkWell(
         onTap: () {
          
+          // ignore: unnecessary_null_comparison
           if (item.id != null) {
             
             controller.goChat(item);
