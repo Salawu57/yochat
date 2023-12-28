@@ -4,6 +4,7 @@ import 'package:yo_chat/authentication/models/user_model.dart';
 import 'package:yo_chat/authentication/screens/signup/widgets/verify_email.dart';
 import 'package:yo_chat/data/repositories/authentication/authentication_repository.dart';
 import 'package:yo_chat/data/repositories/user/user_repository.dart';
+import 'package:yo_chat/utils/Network/network_manager.dart';
 import 'package:yo_chat/utils/constants/images_strings.dart';
 import 'package:yo_chat/utils/popups/full_screen_loader.dart';
 import 'package:yo_chat/utils/popups/loaders.dart';
@@ -27,15 +28,16 @@ class SignupController extends GetxController {
           'We are processing your information...', YoAppImages.docerAnimation);
 
       //check internet connection
-      // final isConnected = await NetworkManager.instance.isConnected();
-      // if (!isConnected) {
-      //    FullScreenLoader.stopLoading();
-      //   Loaders.warningSnackbar(
-      //       title: "No internet connection",
-      //       message: 'Please connect to the Internet');
       
-      //   return;
-      // }
+      final isConnected = await NetworkManager.instance.isConnected();
+      if (!isConnected) {
+         FullScreenLoader.stopLoading();
+        Loaders.warningSnackbar(
+            title: "No internet connection",
+            message: 'Please connect to the Internet');
+      
+        return;
+      }
 
       //form validation
       if (!signupFormKey.currentState!.validate()) {

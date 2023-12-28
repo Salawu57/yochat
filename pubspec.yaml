@@ -44,6 +44,18 @@ dependencies:
   lottie: ^2.7.0
   firebase_auth: ^4.15.3
   cloud_firestore: ^4.13.6
+  shimmer: ^3.0.0
+  google_sign_in: ^6.2.1
+  image_picker: ^1.0.5
+  firebase_storage: ^11.5.6
+  cached_network_image: ^3.3.0
+  image_cropper: ^5.0.1
+  path_provider: ^2.1.1
+  flutter_image_compress: ^2.1.0
+  path: ^1.8.3
+  flutter_screenutil: ^5.9.0
+  extended_image: ^8.2.0
+
 
 
  #--------------- ./ PACKAGES END ------------------#
@@ -63,14 +75,8 @@ flutter:
   #--------------- LOCAL ASSETS ------------------#
   assets:
     - assets/logos/
-    - assets/icons/brands/
     - assets/images/content/
-    - assets/images/banners/
-    - assets/images/reviews/
-    - assets/images/products/
-    - assets/icons/categories/
     - assets/images/animations/
-    - assets/icons/payment_methods/
     - assets/images/on_boarding_images/
 
  #--------------- LOCAL FONTS ------------------#

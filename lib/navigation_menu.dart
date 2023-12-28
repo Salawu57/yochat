@@ -5,6 +5,7 @@ import 'package:yo_chat/authentication/screens/chat/chat_contact.dart';
 import 'package:yo_chat/authentication/screens/notification/notifications.dart';
 import 'package:yo_chat/authentication/screens/settings/settings.dart';
 import 'package:yo_chat/authentication/screens/status/status.dart';
+import 'package:yo_chat/pages/contact%20/index.dart';
 import 'package:yo_chat/utils/constants/colors.dart';
 import 'package:yo_chat/utils/helpers/helper_functions.dart';
 
@@ -49,7 +50,7 @@ class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
 
   final screens = [
-    const ChatContactsScreen(),
+    const ContactPage(),
     const StatusScreen(),
     const NotificationScreen(),
     const SettingsScreen(),

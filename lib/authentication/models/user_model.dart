@@ -44,6 +44,7 @@ class UserModel {
 
   Map<String, dynamic> toJson() {
     return {
+      'accessToken': id,
       'FullName': fullName,
       'Username': username,
       'Email': email,
@@ -52,18 +53,103 @@ class UserModel {
     };
   }
 
-  // factory UserModel.fromSnapshot(
-  //     DocumentSnapshot<Map<String, dynamic>> document) {
-  //   if (document.data() != null) {
-  //     final data = document.data()!;
-  //     return UserModel(
-  //       id: document.id,
-  //       fullName: data['FullName'] ?? '',
-  //       username: data['Username'] ?? '',
-  //       email: data['Email'] ?? '',
-  //       phoneNumber: data['PhoneNumber'] ?? '',
-  //       profilePicture: data['ProfilePicture'] ?? '',
-  //     );
-  //   }
-  // }
+
+  Map<String, dynamic> toFirestore() {
+    return {
+      if (id != null) "id": id,
+      if (fullName != null) "fullname": fullName,
+      if (email != null) "email": email,
+      if (username != null) "username": username,
+      if (phoneNumber != null) "phoneNumber": phoneNumber,
+      if (profilePicture != null) "profilePicture": profilePicture,
+    };
+  }
+
+  
+
+
+  factory UserModel.fromFirestore(
+      DocumentSnapshot<Map<String, dynamic>> snapshot,
+      SnapshotOptions? options,
+      ) {
+    final data = snapshot.data();
+    return UserModel(
+       id: snapshot.id,
+        fullName: snapshot['FullName'] ?? '',
+        username: snapshot['Username'] ?? '',
+        email: snapshot['Email'] ?? '',
+        phoneNumber: snapshot['PhoneNumber'] ?? '',
+        profilePicture: snapshot['ProfilePicture'] ?? '',
+    );
+  }
+
+
+  factory UserModel.fromSnapshot(
+      DocumentSnapshot<Map<String, dynamic>> document) {
+    if (document.data() != null) {
+      final data = document.data()!;
+      return UserModel(
+        id: document.id,
+        fullName: data['FullName'] ?? '',
+        username: data['Username'] ?? '',
+        email: data['Email'] ?? '',
+        phoneNumber: data['PhoneNumber'] ?? '',
+        profilePicture: data['ProfilePicture'] ?? '',
+      );
+    } else {
+      return UserModel.empty();
+    }
+  }
+}
+
+class UserLoginResponseEntity {
+  String? accessToken;
+  String? displayName;
+  String? email;
+  String? photoUrl;
+
+  UserLoginResponseEntity({
+    this.accessToken,
+    this.displayName,
+    this.email,
+    this.photoUrl,
+  });
+
+  factory UserLoginResponseEntity.fromJson(Map<String, dynamic> json) =>
+      UserLoginResponseEntity(
+        accessToken: json["uid"],
+        displayName: json["displayName"],
+        email: json["email"],
+        photoUrl: json["photoURL"],
+      );
+
+  Map<String, dynamic> toJson() => {
+        "access_token": accessToken,
+        "display_name": displayName,
+        "email": email,
+        "photoUrl": photoUrl,
+      };
+}
+
+class MeListItem {
+  String? name;
+  String? icon;
+  String? explain;
+  String? route;
+
+
+  MeListItem({
+    this.name,
+    this.icon,
+    this.explain,
+    this.route,
+  });
+
+  factory MeListItem.fromJson(Map<String, dynamic> json) =>
+      MeListItem(
+        name: json["name"],
+        icon: json["icon"],
+        explain: json["explain"],
+        route: json["route"],
+      );
 }

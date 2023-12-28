@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yo_chat/authentication/controllers/signup/verify_email_controller.dart';
-import 'package:yo_chat/authentication/screens/login/login.dart';
 import 'package:yo_chat/data/repositories/authentication/authentication_repository.dart';
 import 'package:yo_chat/utils/constants/images_strings.dart';
 import 'package:yo_chat/utils/constants/sizes.dart';
