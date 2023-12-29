@@ -11,19 +11,21 @@ import 'package:yo_chat/utils/constants/images_strings.dart';
 class ChatHeaderTiles extends StatelessWidget {
   const ChatHeaderTiles({
     super.key,
-    this.onPressed, required this.fullname, required this.email, required this.photoUrl,
+    this.onPressed,
+    required this.fullname,
+    required this.email,
+    required this.photoUrl, required this.doc_id,
   });
-  
+
   final String fullname;
   final String email;
   final String photoUrl;
-
+  final String doc_id;
 
   final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
-
     return ListTile(
       leading: SizedBox(
         width: 40,
@@ -35,33 +37,28 @@ class ChatHeaderTiles extends StatelessWidget {
             width: 30,
             margin: null,
             decoration: BoxDecoration(
-              borderRadius: const BorderRadius.all(Radius.circular(44)),
-              image: DecorationImage(
-                image: ImageProvider,
-                fit: BoxFit.cover
-              )
-            ),
+                borderRadius: const BorderRadius.all(Radius.circular(44)),
+                image:
+                    DecorationImage(image: ImageProvider, fit: BoxFit.cover)),
           ),
-          errorWidget: (context, url, error) => const Image(
-            image: AssetImage(YoAppImages.user)),
+          errorWidget: (context, url, error) =>
+              const Image(image: AssetImage(YoAppImages.user)),
         ),
       ),
       title: Text(
-          fullname,
-          style: Theme.of(context)
-              .textTheme
-              .headlineSmall!
-              .apply(color: YoColors.white),
-        ),
-      
-      subtitle:  Text(
-          email,
-          style: Theme.of(context)
-              .textTheme
-              .bodyMedium!
-              .apply(color: YoColors.white),
-        ),
-
+        fullname,
+        style: Theme.of(context)
+            .textTheme
+            .headlineSmall!
+            .apply(color: YoColors.white),
+      ),
+      subtitle: Text(
+        email,
+        style: Theme.of(context)
+            .textTheme
+            .bodyMedium!
+            .apply(color: YoColors.white),
+      ),
       trailing: IconButton(
           onPressed: onPressed,
           icon: const Icon(

@@ -70,7 +70,7 @@ class ContactController extends GetxController {
               toFirestore: (Msg msg, options) => msg.toFirestore())
           .add(msgdata)
           .then((value) {
-        Get.to(() => ChatPage(fullname:to_userdata.fullName, email:to_userdata.email, photoUrl: to_userdata.profilePicture));
+        Get.to(() => ChatPage(fullname:to_userdata.fullName, email:to_userdata.email, photoUrl: to_userdata.profilePicture, doc_id: value.id));
         // Get.toNamed('/chat', parameters: {
         //   'doc_id': value.id,
         //   'to_uid': to_userdata.id ?? '',
@@ -80,7 +80,7 @@ class ContactController extends GetxController {
       });
     } else {
       if (from_messages.docs.isNotEmpty) {
-        Get.to(() => ChatPage(fullname:to_userdata.fullName, email:to_userdata.email, photoUrl: to_userdata.profilePicture));
+        Get.to(() => ChatPage(fullname:to_userdata.fullName, email:to_userdata.email, photoUrl: to_userdata.profilePicture, doc_id:from_messages.docs.first.id));
         // Get.toNamed('/chat', parameters: {
         //   'doc_id': from_messages.docs.first.id,
         //   'to_uid': to_userdata.id ?? '',
@@ -89,7 +89,7 @@ class ContactController extends GetxController {
         // });
       }
       if (to_messages.docs.isNotEmpty) {
-         Get.to(() => ChatPage(fullname:to_userdata.fullName, email:to_userdata.email, photoUrl: to_userdata.profilePicture));
+         Get.to(() => ChatPage(fullname:to_userdata.fullName, email:to_userdata.email, photoUrl: to_userdata.profilePicture, doc_id:to_messages.docs.first.id));
         // Get.toNamed('/chat', parameters: {
         //   'doc_id': to_messages.docs.first.id,
         //   'to_uid': to_userdata.id ?? '',
